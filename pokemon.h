@@ -11,7 +11,7 @@ class Pokemon{
         int health;
         int attack;
     public:
-        Pokemon(){};
+        Pokemon() {}
         Pokemon(string pokeName, string pokeType, int healthSize, int attackSize){
             name = pokeName;
             type = pokeType;
