@@ -9,11 +9,11 @@ using namespace std;
 class Player{
     private:
         Pokemon *playerArray = new Pokemon[4]; // array to store pokemon
-        int randNum = 0; // random number generator store, used for random allocation of Pokemon from pokedex
+        int randPlayerNum = 0; // random number generator store, used for random allocation of Pokemon from pokedex
     public:
         Player(){};
-        void addPokemons(); // used to copy Pokemons from Pokedex into player/computer array
-        void returnPokemons(); // shows all Pokemon in player/computer array
+        void addPokemons(); // used to copy Pokemons from Pokedex into player array
+        void returnPokemons(); // shows all Pokemon in player array
         bool winLossStatus(); // boolean operator which determines if player loses (all Pokemon have 0 health) or player wins (all computer Pokemon have 0 health)
 };
 

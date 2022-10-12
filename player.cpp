@@ -30,8 +30,8 @@ void Player::addPokemons(){
     pokedex[19] = Pokemon("Cherubi", "Grass", 30, 9);
     srand (time(NULL));
     for (int i=0; i<4; i++){
-        randNum = rand() % 20;
-        playerArray[i] = pokedex[randNum]; // error: array must be initialized with a brace-enclosed intializer
+        randPlayerNum = rand() % 20;
+        playerArray[i] = pokedex[randPlayerNum];
     }
 }; // used to copy Pokemons from Pokedex into player/computer array
 void Player::returnPokemons(){
