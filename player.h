@@ -3,7 +3,7 @@
 #ifndef _PLAYER_H
 #define _PLAYER_H
 #include "pokemon.h"
-#include "pokedex.cpp"
+#include "pokedex.h"
 using namespace std;
 
 // same code replicated for computer class
