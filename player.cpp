@@ -33,7 +33,7 @@ void Player::addPokemons(){
         randPlayerNum = rand() % 20;
         playerArray[i] = pokedex[randPlayerNum];
     }
-}; // used to copy Pokemons from Pokedex into player/computer array
+}; // used to copy Pokemons from Pokedex into player array
 void Player::returnPokemons(){
     for (int i=0; i<4; i++){
         cout << "Name: " << playerArray[i].returnName() << endl;
@@ -42,4 +42,4 @@ void Player::returnPokemons(){
         cout << "Attack: " << playerArray[i].returnAttack() << endl;
         cout << endl;
     }
-}; // shows all Pokemon in player/computer array
+}; // shows all Pokemon in player array
