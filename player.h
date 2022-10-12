@@ -3,22 +3,18 @@
 #ifndef _PLAYER_H
 #define _PLAYER_H
 #include "pokemon.h"
-#include "pokedex.h"
 using namespace std;
 
 // same code replicated for computer class
 class Player{
     private:
-        Pokemon array[4]; // array to store pokemon
-        int numbers[4];
+        Pokemon *playerArray = new Pokemon[4]; // array to store pokemon
+        int randNum = 0; // random number generator store, used for random allocation of Pokemon from pokedex
     public:
-        Player() {}
-        Player(Pokemon playerArray[4]){
-            playerArray = array;
-        };
-        int addPokemons(){}; // used to copy Pokemons from Pokedex into player/computer array
-        string returnPokemons(){}; // shows all Pokemon in player/computer array
-
+        Player(){};
+        void addPokemons(); // used to copy Pokemons from Pokedex into player/computer array
+        void returnPokemons(); // shows all Pokemon in player/computer array
+        bool winLossStatus(); // boolean operator which determines if player loses (all Pokemon have 0 health) or player wins (all computer Pokemon have 0 health)
 };
 
 #endif /* _PLAYER_H */

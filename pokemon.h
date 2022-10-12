@@ -18,9 +18,9 @@ class Pokemon{
             health= healthSize;
             attack = attackSize;
         };
-        string returnName(){}; // returns the Pokemon name
-        string returnType(){}; // returns the Pokemon type
-        int returnHealth(){}; // returns the health amount
-        int returnAttack(){}; // returns the attack amount
+        string returnName(); // returns the Pokemon name
+        string returnType(); // returns the Pokemon type
+        int returnHealth(); // returns the health amount
+        int returnAttack(); // returns the attack amount
 };
-#endif
+#endif 
