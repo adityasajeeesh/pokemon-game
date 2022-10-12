@@ -5,7 +5,7 @@
 #include "pokemon.h"
 using namespace std;
 
-Pokemon pokedex[20]; // created in the pokedex header file, for inheritance purposes
+Pokemon pokedex[20]; // created in the Pokemon pokedex header file, for inheritance purposes
 
 Pokemon pokedex[0] = Pokemon("Growlithe", "Fire", 40, 15);
 Pokemon pokedex[1] = Pokemon("Darmantian", "Fire", 70, 27);
