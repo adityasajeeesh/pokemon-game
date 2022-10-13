@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<stdlib.h>
-#include<time.h>
+#include<sys/time.h>
 #include "pokemon.h"
 #include "computer.h"
 using namespace std;
@@ -28,7 +28,7 @@ void Computer::addPokemons(){
     pokedex[17] = Pokemon("Pansage", "Grass", 30, 12);
     pokedex[18] = Pokemon("Treecko", "Grass", 30, 9);
     pokedex[19] = Pokemon("Cherubi", "Grass", 30, 9);
-    srand (time(NULL));
+    srand (2838064159);
     for (int i=0; i<4; i++){
         randComputerNum = rand() % 20;
         computerArray[i] = pokedex[randComputerNum];
