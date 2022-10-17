@@ -14,6 +14,7 @@ class Computer{
         Computer(){};
         void addPokemons(); // used to copy Pokemons from Pokedex into computer array
         void returnPokemons(); // shows all Pokemon in computer array
+        int currentComputerPokemon = 0; // holds the current Pokemon index to put into battle
         bool winLossStatus(); // boolean operator which determines if computer loses (all Pokemon have 0 health) or computer wins (all player Pokemon have 0 health)
 };
 
