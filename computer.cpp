@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<sys/time.h>
 #include<windows.h>
+#include<algorithm> // for std::random_shuffle
 #include "pokemon.h"
 #include "computer.h"
 using namespace std;
@@ -46,3 +47,10 @@ void Computer::returnPokemons(){
         Sleep(500);
     }
 }; // shows all Pokemon in player array
+void Computer::randomPokemonSelectOrder(){
+    int selectArray[4] = {1,2,3,4};
+    random_shuffle(&selectArray[0], &selectArray[3]);
+    for (int i=0; i<4; i++){
+        cout << selectArray[i] << endl;
+    };
+}
