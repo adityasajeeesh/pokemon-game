@@ -47,9 +47,15 @@ void Computer::returnPokemons(){
         Sleep(500);
     }
 }; // shows all Pokemon in player array
+
+int randomseed(int i){
+    return rand()%i;
+}
+
 void Computer::randomPokemonSelectOrder(){
+    srand(unsigned(time(0)));
     int selectArray[4] = {1,2,3,4};
-    random_shuffle(&selectArray[0], &selectArray[3]);
+    random_shuffle(&selectArray[0], &selectArray[3], randomseed);
     for (int i=0; i<4; i++){
         cout << selectArray[i] << endl;
     };
