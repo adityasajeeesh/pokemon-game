@@ -9,13 +9,13 @@ using namespace std;
 class Player{
     private:
         string playerName; // stores the player's name
-        Pokemon *playerArray = new Pokemon[4]; // array to store pokemon
         int randPlayerNum = 0; // random number generator store, used for random allocation of Pokemon from pokedex
     public:
         Player(){};
         Player(string name){
             playerName = name;
         }
+        Pokemon *playerArray = new Pokemon[4]; // array to store pokemon
         void setName(); // sets the player's name
         string getName(); // returns the player's name
         void addPokemons(); // used to copy Pokemons from Pokedex into player array
