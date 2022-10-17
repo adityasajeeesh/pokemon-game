@@ -2,9 +2,19 @@
 #include<string>
 #include<stdlib.h>
 #include<time.h>
+#include<windows.h>
 #include "pokemon.h"
 #include "player.h"
 using namespace std;
+
+void Player::setName(){
+    cout << "Enter your name: ";
+    cin >> playerName;
+}
+
+string Player::getName(){
+    return playerName;
+}
 
 void Player::addPokemons(){
     Pokemon *pokedex = new Pokemon[20];
@@ -36,10 +46,12 @@ void Player::addPokemons(){
 }; // used to copy Pokemons from Pokedex into player array
 void Player::returnPokemons(){
     for (int i=0; i<4; i++){
+        cout << "[" << i+1 << "]" << endl;
         cout << "Name: " << playerArray[i].returnName() << endl;
         cout << "Type: " << playerArray[i].returnType() << endl;
         cout << "Health: " << playerArray[i].returnHealth() << endl;
         cout << "Attack: " << playerArray[i].returnAttack() << endl;
         cout << endl;
+        Sleep(500);
     }
 }; // shows all Pokemon in player array

@@ -2,6 +2,7 @@
 #include<string>
 #include<stdlib.h>
 #include<sys/time.h>
+#include<windows.h>
 #include "pokemon.h"
 #include "computer.h"
 using namespace std;
@@ -36,10 +37,12 @@ void Computer::addPokemons(){
 }; // used to copy Pokemons from Pokedex into player array
 void Computer::returnPokemons(){
     for (int i=0; i<4; i++){
+        cout << "[" << i+1 << "]" << endl;
         cout << "Name: " << computerArray[i].returnName() << endl;
         cout << "Type: " << computerArray[i].returnType() << endl;
         cout << "Health: " << computerArray[i].returnHealth() << endl;
         cout << "Attack: " << computerArray[i].returnAttack() << endl;
         cout << endl;
+        Sleep(500);
     }
 }; // shows all Pokemon in player array
