@@ -15,14 +15,15 @@ void Scoreboard::lossCount(Player a){
             playerLoss++;
         }
     }
-};
+}; // incremental loss counter for player's Pokemon
 
 void Scoreboard::lossCount(Computer b){
     for(int i=0; i<4; i++){
         if (b.computerArray[i].health == 0){
             computerLoss++;
         }
-};};
+    };
+}; // incremental loss counter for computer's Pokemon
 
 
 void Scoreboard::resultOutput(Player a, Computer b){
@@ -46,4 +47,4 @@ void Scoreboard::resultOutput(Player a, Computer b){
         cout << "No one wins, better luck next time! Thank you for playing!" << endl;
         Sleep(500);
     }
-}
+};  // displays the winner of the battle

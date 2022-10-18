@@ -15,7 +15,7 @@ int main(){
     // introductory paragraph/rules
     {cout << "Welcome to Pokemon!" << endl;
     Sleep(700); // used to delay time (in milliseconds) from previous command to next command
-    // unsure if Sleep will work on Mac but it is worth a shot
+    // unsure if Sleep will compile on Mac but it is worth a shot
     cout << "The battle follows as such: " << endl;
     Sleep(700);
     cout << "- The computer and the player are each assigned 4 Pokemon at random from the Pokedex" << endl;

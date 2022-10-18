@@ -9,7 +9,7 @@
 using namespace std;
 
 void Computer::addPokemons(){
-    Pokemon *pokedex = new Pokemon[20];
+    Pokemon *pokedex = new Pokemon[20]; // Pokedex of all possible Pokemons
     pokedex[0] = Pokemon("Growlithe", "Fire", 40, 15);
     pokedex[1] = Pokemon("Darmantian", "Fire", 70, 27);
     pokedex[2] = Pokemon("Braixen", "Fire", 40, 12);
@@ -30,7 +30,7 @@ void Computer::addPokemons(){
     pokedex[17] = Pokemon("Pansage", "Grass", 30, 12);
     pokedex[18] = Pokemon("Treecko", "Grass", 30, 9);
     pokedex[19] = Pokemon("Cherubi", "Grass", 30, 9);
-    srand (2838064159);
+    srand (2838064159); // random seed generated from a random Ethereum wallet
     for (int i=0; i<4; i++){
         randComputerNum = rand() % 20;
         computerArray[i] = pokedex[randComputerNum];
@@ -41,12 +41,12 @@ void Computer::returnPokemons(){
         cout << "[" << i+1 << "]" << endl;
         cout << "Name: " << computerArray[i].returnName() << endl;
         cout << "Type: " << computerArray[i].returnType() << endl;
-        cout << "Health: " << computerArray[i].returnHealth() << endl;
         cout << "Attack: " << computerArray[i].returnAttack() << endl;
+        cout << "Health: " << computerArray[i].returnHealth() << endl;
         cout << endl;
         Sleep(500);
     }
-}; // shows all Pokemon in player array
+}; // returns all Pokemon in player array, including statistics
 
 int randomseed(int i){
     return rand()%i;

@@ -10,14 +10,14 @@ using namespace std;
 void Player::setName(){
     cout << "Enter your name: ";
     cin >> playerName;
-}
+} // sets the Player's name
 
 string Player::getName(){
     return playerName;
-}
+} // gets the Player's name
 
 void Player::addPokemons(){
-    Pokemon *pokedex = new Pokemon[20];
+    Pokemon *pokedex = new Pokemon[20]; // Pokedex of all possible Pokemons
     pokedex[0] = Pokemon("Growlithe", "Fire", 40, 15);
     pokedex[1] = Pokemon("Darmantian", "Fire", 70, 27);
     pokedex[2] = Pokemon("Braixen", "Fire", 40, 12);
@@ -38,7 +38,7 @@ void Player::addPokemons(){
     pokedex[17] = Pokemon("Pansage", "Grass", 30, 12);
     pokedex[18] = Pokemon("Treecko", "Grass", 30, 9);
     pokedex[19] = Pokemon("Cherubi", "Grass", 30, 9);
-    srand (time(NULL));
+    srand (time(NULL)); // generates a random seed for the allocation of Pokemon to player array
     for (int i=0; i<4; i++){
         randPlayerNum = rand() % 20;
         playerArray[i] = pokedex[randPlayerNum];
@@ -49,9 +49,9 @@ void Player::returnPokemons(){
         cout << "[" << i+1 << "]" << endl;
         cout << "Name: " << playerArray[i].returnName() << endl;
         cout << "Type: " << playerArray[i].returnType() << endl;
-        cout << "Health: " << playerArray[i].returnHealth() << endl;
         cout << "Attack: " << playerArray[i].returnAttack() << endl;
+        cout << "Health: " << playerArray[i].returnHealth() << endl;
         cout << endl;
         Sleep(500);
     }
-}; // shows all Pokemon in player array
+}; // returns all Pokemon in player array, including statistics
