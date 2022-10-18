@@ -49,3 +49,4 @@ void Battle::battle(Player a, Computer b){
         cout << "Returning to selection, next round starting soon." << endl;
     }
 } // nested loops to determine who is the winner of the round
+void Battle::lossCount(){};

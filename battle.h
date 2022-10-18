@@ -15,8 +15,8 @@ class Battle : public Player, public Computer{
         int computerAttack = 0; // stores computer Pokemon attack value
         Battle(){}; // default constructor
         void addIntoArena(Player a, Computer b); // add selected Pokemon into the arena
-        void playerFight(Player a, Computer b); // simplifies code in cpp file
         void battle(Player a, Computer b); // nested loops to determine who is the winner of the round
+        virtual void lossCount(); // counts the number of Pokemon with health <= 0
 };
 
 #endif /* _BATTLE_H */
