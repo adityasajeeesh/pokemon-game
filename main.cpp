@@ -48,29 +48,36 @@ int main(){
     Sleep(500);
     comp.returnPokemons(); // returns computer Pokemons
 
-    // Pokemon selection
-    cout << "Please select a Pokemon to send into battle by typing 1-4: ";
-    cin >> thePlayer.currentPlayerPokemon;
-    while (thePlayer.currentPlayerPokemon < 1 || thePlayer.currentPlayerPokemon > 4){
-        cout << "Please select from 1-4: ";
+    // Pokemon selection and battle (looped 4 times)
+    for (int i=0; i<4; i++){
+        cout << "Please select a Pokemon to send into battle by typing 1-4: ";
         cin >> thePlayer.currentPlayerPokemon;
-    } // verifies that the player is not inputting values outside 1-4 range
-    Sleep(1000);
-    cout << "You have selected: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << endl;
-    Sleep(300);
-    cout << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << " has: " << endl
-    << "- Attack: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnAttack() << endl
-    << "- Health: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnHealth() << endl;
-    comp.currentComputerPokemon = comp.selectArray[1];
-    Sleep(1000);
-    cout << "Computer has selected: " << comp.computerArray[comp.currentComputerPokemon].returnName() << endl;
-    Sleep(300);
-    cout << comp.computerArray[comp.currentComputerPokemon].returnName() << " has: " << endl
-    << "- Attack: " << comp.computerArray[comp.currentComputerPokemon].returnAttack() << endl
-    << "- Health: " << comp.computerArray[comp.currentComputerPokemon].returnHealth() << endl;
+        while (thePlayer.currentPlayerPokemon < 1 || thePlayer.currentPlayerPokemon > 4){
+            cout << "Please select from 1-4: ";
+            cin >> thePlayer.currentPlayerPokemon;
+        } // verifies that the player is not inputting values outside 1-4 range
+        while (thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].health < 0){
+            cout << "Please select a Pokemon with health: ";
+            cin >> thePlayer.currentPlayerPokemon;
+        } // checks if the Pokemon has been used before, or if there is not enough health left
+        Sleep(1000);
+        cout << "You have selected: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << endl;
+        Sleep(300);
+        cout << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << " has: " << endl
+        << "- Attack: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnAttack() << endl
+        << "- Health: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnHealth() << endl;
+        comp.currentComputerPokemon = comp.selectArray[i];
+        Sleep(1000);
+        cout << "Computer has selected: " << comp.computerArray[comp.currentComputerPokemon].returnName() << endl;
+        Sleep(300);
+        cout << comp.computerArray[comp.currentComputerPokemon].returnName() << " has: " << endl
+        << "- Attack: " << comp.computerArray[comp.currentComputerPokemon].returnAttack() << endl
+        << "- Health: " << comp.computerArray[comp.currentComputerPokemon].returnHealth() << endl;
 
-    Sleep(300);
-    theArena.battle(thePlayer, comp);
+        Sleep(1000);
+        theArena.battle(thePlayer, comp); // calls and runs the battle function     
+    };
+
 
     return 0;
 }
