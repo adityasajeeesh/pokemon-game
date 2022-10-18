@@ -54,5 +54,5 @@ int randomseed(int i){
 
 void Computer::randomPokemonSelectOrder(){
     srand(unsigned(time(0)));
-    std::_Random_shuffle1(&selectArray[0], &selectArray[3], randomseed);
+    random_shuffle(&selectArray[0], &selectArray[3], randomseed);
 }
