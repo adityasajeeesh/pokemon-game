@@ -75,7 +75,14 @@ int main(){
         << "- Health: " << comp.computerArray[comp.currentComputerPokemon].returnHealth() << endl;
 
         Sleep(1000);
-        theArena.battle(thePlayer, comp); // calls and runs the battle function     
+        theArena.battle(thePlayer, comp); // calls and runs the battle functio
+        
+        // following code shows the Pokemon health after each round is completed
+        Sleep(700);
+        cout << "Your Pokemons are: " << endl;
+        thePlayer.returnPokemons();
+        cout << endl;
+        Sleep(700);     
     };
 
 
