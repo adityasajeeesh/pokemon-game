@@ -7,10 +7,15 @@
 #ifndef _BATTLE_H
 #define _BATTLE_H
 
+using namespace std;
+
 class Battle : public Player, public Computer{
-    private:
-    
     public:
+        int playerAttack = 0; // stores player Pokemon attack value
+        int computerAttack = 0; // stores computer Pokemon attack value
+        Battle(){}; // default constructor
+        void addIntoArena(Player a, Computer b); // add selected Pokemon into the arena
+        void battle(Player a, Computer b); // nested loops to determine who is the winner of the round
 };
 
 #endif /* _BATTLE_H */
