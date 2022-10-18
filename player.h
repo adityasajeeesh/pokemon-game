@@ -15,7 +15,7 @@ class Player{
         Player(string name){
             playerName = name;
         }
-        Pokemon *playerArray = new Pokemon[4]; // array to store pokemon
+        Pokemon playerArray[4]; // array to store pokemon
         void setName(); // sets the player's name
         string getName(); // returns the player's name
         void addPokemons(); // used to copy Pokemons from Pokedex into player array

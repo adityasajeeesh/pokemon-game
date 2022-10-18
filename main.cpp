@@ -95,6 +95,6 @@ int main(){
     Sleep(500);
     cout << "Calculating results... " << endl;
     Sleep(2000);
-    pokeboard.resultOutput(thePlayer, comp); // displays who the winner is and ends the program
+    pokeboard.resultOutput(thePlayer, comp); // displays who the winner is
     return 0;
 }

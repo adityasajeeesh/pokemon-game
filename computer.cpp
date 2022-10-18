@@ -9,7 +9,7 @@
 using namespace std;
 
 void Computer::addPokemons(){
-    Pokemon *pokedex = new Pokemon[20]; // Pokedex of all possible Pokemons
+    Pokemon pokedex[20]; // Pokedex of all possible Pokemons
     pokedex[0] = Pokemon("Growlithe", "Fire", 40, 15);
     pokedex[1] = Pokemon("Darmantian", "Fire", 70, 27);
     pokedex[2] = Pokemon("Braixen", "Fire", 40, 12);
