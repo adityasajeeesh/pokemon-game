@@ -21,7 +21,6 @@ class Player{
         void addPokemons(); // used to copy Pokemons from Pokedex into player array
         void returnPokemons(); // shows all Pokemon in player array
         int currentPlayerPokemon = 0; // holds the current Pokemon index to put into battle
-        bool winLossStatus(); // boolean operator which determines if player loses (all Pokemon have 0 health) or player wins (all computer Pokemon have 0 health)
 };
 
 #endif /* _PLAYER_H */

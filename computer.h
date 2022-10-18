@@ -17,7 +17,6 @@ class Computer{
         void randomPokemonSelectOrder(); // automated process to select the Pokemon to battle
         int currentComputerPokemon = 0; // holds the current Pokemon index to put into battle
         int selectArray[4] = {0,1,2,3};
-        bool winLossStatus(); // boolean operator which determines if computer loses (all Pokemon have 0 health) or computer wins (all player Pokemon have 0 health)
 };
 
 #endif /* _COMPUTER_H */
