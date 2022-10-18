@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<stdlib.h>
-#include<sys/time.h>
+#include<ctime>
 #include<windows.h>
 #include<algorithm> // for std::random_shuffle
 #include "pokemon.h"
@@ -54,6 +54,5 @@ int randomseed(int i){
 
 void Computer::randomPokemonSelectOrder(){
     srand(unsigned(time(0)));
-    int selectArray[4] = {1,2,3,4};
-    random_shuffle(&selectArray[0], &selectArray[3], randomseed);
+    std::_Random_shuffle1(&selectArray[0], &selectArray[3], randomseed);
 }
