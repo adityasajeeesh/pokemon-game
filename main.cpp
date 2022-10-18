@@ -5,6 +5,7 @@
 #include "pokemon.h"
 #include "player.h"
 #include "computer.h"
+#include "battle.h"
 
 using namespace std;
 
@@ -29,20 +30,47 @@ int main(){
     system("pause"); // "Enter any key to continue...", when the user is ready (appears to be Windows only)
     }
 
-    // main game code
+    // inital Pokemon distribution
     cout << "New game started!" << endl;
-    Sleep(300);
+    Battle theArena; // default object for the battle rounds
+    Sleep(500);
     Player thePlayer; // default object for player
     thePlayer.setName(); // sets the player's name
     thePlayer.addPokemons(); // gives the player 4 Pokemons at random
-    Sleep(300);
+    Sleep(500);
     cout << "Hello, " << thePlayer.getName() << ", your Pokemon are: " << endl;
-    thePlayer.returnPokemons();
-    std::cout << " ------" << endl;
+    thePlayer.returnPokemons(); // returns player Pokemons
+    std::cout << "------" << endl;
     Computer comp; // default object for computer
     comp.addPokemons(); // gives the computer 4 Pokemons at random
-    Sleep(300);
+    Sleep(500);
     cout << "The computer's Pokemon are: " << endl;
-    comp.returnPokemons();
+    Sleep(500);
+    comp.returnPokemons(); // returns computer Pokemons
+
+    // Pokemon selection
+    cout << "Please select a Pokemon to send into battle by typing 1-4: ";
+    cin >> thePlayer.currentPlayerPokemon;
+    while (thePlayer.currentPlayerPokemon < 1 || thePlayer.currentPlayerPokemon > 4){
+        cout << "Please select from 1-4: ";
+        cin >> thePlayer.currentPlayerPokemon;
+    } // verifies that the player is not inputting values outside 1-4 range
+    Sleep(1000);
+    cout << "You have selected: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << endl;
+    Sleep(300);
+    cout << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << " has: " << endl
+    << "- Attack: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnAttack() << endl
+    << "- Health: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnHealth() << endl;
+    comp.currentComputerPokemon = comp.selectArray[1];
+    Sleep(1000);
+    cout << "Computer has selected: " << comp.computerArray[comp.currentComputerPokemon].returnName() << endl;
+    Sleep(300);
+    cout << comp.computerArray[comp.currentComputerPokemon].returnName() << " has: " << endl
+    << "- Attack: " << comp.computerArray[comp.currentComputerPokemon].returnAttack() << endl
+    << "- Health: " << comp.computerArray[comp.currentComputerPokemon].returnHealth() << endl;
+
+    Sleep(300);
+    theArena.battle(thePlayer, comp);
+
     return 0;
 }
