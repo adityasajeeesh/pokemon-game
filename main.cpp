@@ -6,6 +6,7 @@
 #include "player.h"
 #include "computer.h"
 #include "battle.h"
+#include "scoreboard.h"
 
 using namespace std;
 
@@ -33,7 +34,6 @@ int main(){
     // inital Pokemon distribution
     cout << "New game started!" << endl;
     Battle theArena; // default object for the battle rounds
-    Sleep(500);
     Player thePlayer; // default object for player
     thePlayer.setName(); // sets the player's name
     thePlayer.addPokemons(); // gives the player 4 Pokemons at random
@@ -41,7 +41,9 @@ int main(){
     cout << "Hello, " << thePlayer.getName() << ", your Pokemon are: " << endl;
     thePlayer.returnPokemons(); // returns player Pokemons
     std::cout << "------" << endl;
+    Sleep(500);
     Computer comp; // default object for computer
+    comp.randomPokemonSelectOrder(); // randomises the order in which Pokemon are selected
     comp.addPokemons(); // gives the computer 4 Pokemons at random
     Sleep(500);
     cout << "The computer's Pokemon are: " << endl;
@@ -61,6 +63,7 @@ int main(){
             cin >> thePlayer.currentPlayerPokemon;
         } // checks if the Pokemon has been used before, or if there is not enough health left
         Sleep(1000);
+        // following code displays the selected Pokemon of the player and the computer
         cout << "You have selected: " << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << endl;
         Sleep(300);
         cout << thePlayer.playerArray[thePlayer.currentPlayerPokemon - 1].returnName() << " has: " << endl
@@ -75,16 +78,22 @@ int main(){
         << "- Health: " << comp.computerArray[comp.currentComputerPokemon].returnHealth() << endl;
 
         Sleep(1000);
-        theArena.battle(thePlayer, comp); // calls and runs the battle functio
-        
-        // following code shows the Pokemon health after each round is completed
-        Sleep(700);
-        cout << "Your Pokemons are: " << endl;
+        theArena.battle(thePlayer, comp); // calls and runs the battle function   
+
+        // following code shows Pokemon stats of player and computer after each round
+        cout << "Your Pokemon stats are: " << endl;
         thePlayer.returnPokemons();
-        cout << endl;
-        Sleep(700);     
+        Sleep(500);
+        cout << endl << "Computer Pokemon stats are: " << endl;
+        comp.returnPokemons();
+        Sleep(500);
     };
-
-
+    Scoreboard pokeboard;
+    pokeboard.lossCount(thePlayer); // counts up losses (Pokemon of health >= 0) of player
+    pokeboard.lossCount(comp); // counts up losses (Pokemon of health >= 0) of computer
+    Sleep(500);
+    cout << "Calculating results... " << endl;
+    Sleep(2000);
+    pokeboard.resultOutput(thePlayer, comp); // displays who the winner is and ends the program
     return 0;
 }
