@@ -1,3 +1,4 @@
+// compile on windows: g++ pokemon.h pokemon.cpp player.h player.cpp computer.h computer.cpp battle.h battle.cpp scoreboard.h scoreboard.cpp main.cpp -o main
 #include<iostream>
 #include<string>
 #include<stdlib.h>
